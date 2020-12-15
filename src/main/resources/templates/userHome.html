@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--用户的首页界面-->
+<head>
+    <meta charset="UTF-8">
+    <title>电影</title>
+    <!-- Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+    <!-- font-asesome图标库 -->
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css"/>
+
+    <!-- 引入css样式文件 -->
+    <link rel="stylesheet" type="text/css" href="/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/userHome.css"/>
+
+    <!-- 引入js脚本文件 -->
+    <!-- jquery -->
+    <script src="/js/jquery.js"></script>
+
+    <!-- Bootstrap 核心 JavaScript 文件 -->
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/request.js"></script>
+    <script src="/js/userHome.js"></script>
+
+</head>
+<body>
+    <div class="nav-top-container" style="margin-bottom: 40px">
+<!--        <div class="nav-logo title">NJU-Se电影购票系统</div>-->
+<!--        <ul class="nav nav-pills">-->
+<!--            <li role="presentation" class="active"><a href="#">首页</a></li>-->
+<!--            <li role="presentation"><a href="/user/movie">电影</a></li>-->
+<!--        </ul>-->
+<!--        <div class="btn-group">-->
+<!--            <button class="nav-user-container btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--                <img class="avatar-sm" src="/images/defaultAvatar.jpg" />-->
+<!--                <span class="gray-text" style="vertical-align: middle">用户A&nbsp;<span class="caret"></span></span>-->
+<!--            </button>-->
+<!--            <ul class="dropdown-menu">-->
+<!--                <li><a href="/user/buy">电影票</a></li>-->
+<!--                <li><a href="/user/member">卡包</a></li>-->
+<!--                <li><a href="/user/buyHistory">历史记录</a></li>-->
+<!--                <li id="logout"><a href="#">登出</a></li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">NJU-SE影院管理系统</a>
+                    </div>
+                    <div>
+                        <!--向左对齐-->
+                        <ul class="nav navbar-nav navbar-left">
+                            <li class="active"><a href="#">首页</a></li>
+                            <li><a href="/user/movie">电影</a></li>
+
+                        </ul>
+                        <!--向右对齐-->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    用户中心 <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/user/buy">电影票</a></li>
+                                    <li><a href="/user/member">卡包</a></li>
+                                    <li><a href="/user/buyHistory">历史记录</a></li>
+                                    <li id="logout"><a href="#">登出</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9">
+                <h3>正在热映</h3>
+                <div class="row">
+                    <div class="col-md-3 movie-block">
+                        <div style="position:relative;width:160px;height:250px;background: url(https://p1.meituan.net/movie/c16b0a68f95d884d428f339f8eacce834410200.jpg@160w_220h_1e_1c) no-repeat">
+                            <div style="position: absolute;bottom:0px;background: #ccc">
+                                <a target="_blank" href="/user/movieDetail?id=11">
+                                    <span>一点就到家 7.0</span>
+                                </a>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-sm">
+                            <a target="_blank" href="/user/movieDetail?id=11"></a>购票
+                        </button>
+                    </div>
+                    <div class="col-md-3 movie-block">
+                        <a target="_blank" href="/user/movieDetail?id=11">
+                            <img class="movie-img" src="https://p1.meituan.net/movie/c16b0a68f95d884d428f339f8eacce834410200.jpg@160w_220h_1e_1c">
+                            <p>一点就到家</p>
+                            <p>评分:7.0</p>
+                            <button type="button" class="btn btn-primary btn-sm">购票</button>
+                        </a>
+                    </div>
+                    <div class="col-md-3 movie-block">
+                        <a target="_blank" href="/user/movieDetail?id=11">
+                            <img class="movie-img" src="https://p1.meituan.net/movie/c16b0a68f95d884d428f339f8eacce834410200.jpg@160w_220h_1e_1c">
+                            <p>一点就到家</p>
+                            <p>评分:7.0</p>
+                            <button type="button" class="btn btn-primary btn-sm">购票</button>
+                        </a>
+                    </div>
+                    <div class="col-md-3 movie-block">
+                        <a target="_blank" href="/user/movieDetail?id=11">
+                            <img class="movie-img" src="https://p1.meituan.net/movie/c16b0a68f95d884d428f339f8eacce834410200.jpg@160w_220h_1e_1c">
+                            <p>一点就到家</p>
+                            <p>评分:7.0</p>
+                            <button type="button" class="btn btn-primary btn-sm">购票</button>
+                        </a>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-md-3 movie-block">
+                        <a target="_blank" href="/user/movieDetail?id=12">
+                            <img class="movie-img" src="https://p0.meituan.net/movie/35a2550fdf6ca5088087a685e9ec8c791613927.jpg@464w_644h_1e_1c">
+                            <p>喜宝</p>
+                            <p>评分:6.5</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3 movie-block">
+                        <a target="_blank" href="/user/movieDetail?id=12">
+                            <img class="movie-img" src="https://p0.meituan.net/movie/35a2550fdf6ca5088087a685e9ec8c791613927.jpg@464w_644h_1e_1c">
+                            <p>喜宝</p>
+                            <p>评分:6.5</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3 movie-block">
+                        <a target="_blank" href="/user/movieDetail?id=12">
+                            <img class="movie-img" src="https://p0.meituan.net/movie/35a2550fdf6ca5088087a685e9ec8c791613927.jpg@464w_644h_1e_1c">
+                            <p>喜宝</p>
+                            <p>评分:6.5</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3 movie-block">
+                        <a target="_blank" href="/user/movieDetail?id=12">
+                            <img class="movie-img" src="https://p0.meituan.net/movie/35a2550fdf6ca5088087a685e9ec8c791613927.jpg@464w_644h_1e_1c">
+                            <p>喜宝</p>
+                            <p>评分:6.5</p>
+                        </a>
+                    </div>
+                </div>
+                <h3>即将上映</h3>
+                <div class="row">
+                    <div class="col-md-3 movie-block">
+                        <a target="_blank" href="/user/movieDetail?id=4">
+                            <img class="movie-img" src="https://p0.meituan.net/moviemachine/cf7d6942f2aa9189cce20519b490b6b1879487.jpg@160w_220h_1e_1c">
+                            <p>野性的呼唤</p>
+                            <p>评分:7.5</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3 movie-block">
+                        <a target="_blank" href="/user/movieDetail?id=4">
+                            <img class="movie-img" src="https://p0.meituan.net/moviemachine/cf7d6942f2aa9189cce20519b490b6b1879487.jpg@160w_220h_1e_1c">
+                            <p>野性的呼唤</p>
+                            <p>评分:7.5</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3 movie-block">
+                        <a target="_blank" href="/user/movieDetail?id=4">
+                            <img class="movie-img" src="https://p0.meituan.net/moviemachine/cf7d6942f2aa9189cce20519b490b6b1879487.jpg@160w_220h_1e_1c">
+                            <p>野性的呼唤</p>
+                            <p>评分:7.5</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3 movie-block">
+                        <a target="_blank" href="/user/movieDetail?id=4">
+                            <img class="movie-img" src="https://p0.meituan.net/moviemachine/cf7d6942f2aa9189cce20519b490b6b1879487.jpg@160w_220h_1e_1c">
+                            <p>野性的呼唤</p>
+                            <p>评分:7.5</p>
+                        </a>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-md-3 movie-block">
+                        <a target="_blank" href="/user/movieDetail?id=2">
+                            <img class="movie-img" src="https://p0.meituan.net/movie/202ea88abd2abf2aa1964487d61edab64556414.jpg@160w_220h_1e_1c">
+                            <p>我和我的家乡</p>
+                            <p>评分:8.2</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3 movie-block">
+                        <a target="_blank" href="/user/movieDetail?id=2">
+                            <img class="movie-img" src="https://p0.meituan.net/movie/202ea88abd2abf2aa1964487d61edab64556414.jpg@160w_220h_1e_1c">
+                            <p>我和我的家乡</p>
+                            <p>评分:8.2</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3 movie-block">
+                        <a target="_blank" href="/user/movieDetail?id=2">
+                            <img class="movie-img" src="https://p0.meituan.net/movie/202ea88abd2abf2aa1964487d61edab64556414.jpg@160w_220h_1e_1c">
+                            <p>我和我的家乡</p>
+                            <p>评分:8.2</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3 movie-block">
+                        <a target="_blank" href="/user/movieDetail?id=2">
+                            <img class="movie-img" src="https://p0.meituan.net/movie/202ea88abd2abf2aa1964487d61edab64556414.jpg@160w_220h_1e_1c">
+                            <p>我和我的家乡</p>
+                            <p>评分:8.2</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="title primary-text">票房统计</p>
+                        <ul class="top-sell-list card" id="boxingOffice">
+                        </ul>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="title primary-text">最受欢迎</p>
+                        <ul class="top-expectation-list card" id="popularMovie">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<!--        <div class="statistic-container">-->
+<!--            <p class="title primary-text">票房统计</p>-->
+<!--                <ul class="top-sell-list card" id="boxingOffice">-->
+<!--                </ul>-->
+
+<!--            <p class="title primary-text">最受欢迎</p>-->
+<!--                <ul class="top-expectation-list card" id="popularMovie">-->
+<!--                </ul>-->
+<!--        </div>-->
+    </div>
+</body>
+</html>

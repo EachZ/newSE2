@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.cinema.data.management.HallMapper">
+
+    <insert id="addHall" useGeneratedKeys="true" keyProperty="id">
+        insert into hall(`name`, `column`, `row` )
+        values(#{hall_name},#{hall_column},#{hall_row} )
+    </insert>
+
+
+    <update id="changeHall">
+        update hall set `column`=#{hall_column},`row`=#{hall_row} where `name`=#{hall_name}
+    </update>
+
+    <delete id="deleteHall">
+        delete from hall where `name`=#{hall_name}
+    </delete>
+
+
+    <select id="selectAllHall" resultMap="Hall">
+        select * from hall
+    </select>
+    <select id="selectHallById" resultMap="Hall">
+        select * from hall where id = #{hallId}
+    </select>
+
+    <select id="selectHallByName" resultMap="Hall">
+        select * from hall where `name` = #{hallName}
+    </select>
+
+    <select id="selectHallHasSchedule" resultMap="Hall">
+        select * from hall h
+        right join
+        (select hall_id, end_time from schedule) s
+        on s.hall_id = h.id and end_time > #{today}
+        where h.name = #{hallName}
+    </select>
+
+    <resultMap id="Hall" type="com.example.cinema.po.Hall">
+        <result column="id" property="id"></result>
+        <result column="name" property="name"></result>
+        <result column="row" property="row"></result>
+        <result column="column" property="column"></result>
+    </resultMap>
+
+
+</mapper>

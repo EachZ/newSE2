@@ -1,0 +1,22 @@
+spring:
+  datasource:
+     url: jdbc:mysql://localhost:3306/cinema?serverTimezone=CTT&characterEncoding=UTF-8
+     username: root
+     password: root
+#     url: jdbc:mysql://123.57.231.57:3306/cinema
+#     username: root
+#     password: 1qaz!QAZ
+     driver-class-name: com.mysql.cj.jdbc.Driver
+     max-active: 200
+     max-idle: 20
+     min-idle: 10
+  thymeleaf:
+     cache: false
+  jackson:
+    time-zone: GMT+8
+  jmx:
+    enabled: false
+
+mybatis:
+  mapper-locations: classpath:dataImpl/*/*Mapper.xml
+

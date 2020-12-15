@@ -1,0 +1,145 @@
+/*.carousel{*/
+/*    height:auto;*/
+/*}*/
+/*.carousel-caption{*/
+/*    text-align: center;*/
+/*}*/
+/*h3{*/
+/*    height:30px;*/
+/*}*/
+/*.content-container {*/
+/*    display: flex;*/
+/*    padding: 20px 20px;*/
+/*}*/
+
+/*.movie-item {*/
+/*    list-style: none;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    margin: 10px 18px -30px 18px;*/
+/*}*/
+
+/*.movie-item .movie-img:hover {*/
+/*    border: 2px solid #1caf9a;*/
+/*}*/
+
+/*.movie-item .movie-name {*/
+/*    position: relative;*/
+/*    line-height: 30px;*/
+/*    top: -30px;*/
+/*    background: rgba(0,0,0,0.6);*/
+/*    color: #fff;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.movie-item .movie-img {*/
+/*    height: 165px;*/
+/*    width: 120px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.statistic-item {*/
+/*    margin: 8px 0;*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*}*/
+
+/*.movie-contianer {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    flex: 1;*/
+/*    height: 850px;*/
+/*    justify-content: space-between;*/
+/*}*/
+
+/*.statistic-container {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    width: 300px;*/
+/*    height: 850px;*/
+/*    justify-content: space-between;*/
+/*    margin-left: 40px;*/
+/*}*/
+
+/*.carousel-inner img{*/
+/*    width: 865px;*/
+/*    height:400px;*/
+/*}*/
+/*.movie-on-list {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*}*/
+/*.icon-fire{*/
+/*    color:firebrick;*/
+/*}*/
+/*.badge{*/
+/*    color:#1caf9a;*/
+/*}*/
+/*.statistic-container ul {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    height: auto;*/
+/*    padding: 10px 20px;*/
+/*}*/
+/*.bottom{*/
+/*    color:white;*/
+/*}*/
+
+/*.fire{*/
+/*    color:firebrick;*/
+/*    !*font-family: Shu;*!*/
+/*    !*letter-spacing: 2px;*!*/
+/*}*/
+
+/*.thumbs{*/
+/*    !*font-family: Shu;*!*/
+/*    !*letter-spacing: 2px;*!*/
+/*}*/
+/*@font-face {*/
+/*    font-family: Chalk;*/
+/*    src: url("../font/chalk.otf");*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: ZiZai;*/
+/*    src: url("../font/ZiZai.ttf");*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: Meng;*/
+/*    src: url("../font/Meng.otf");*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: Shu;*/
+/*    src: url("../font/Shu.ttf");*/
+/*}*/
+
+.movie-block{
+    text-align: center;
+    margin: 0 auto;
+}
+.movie-block:hover{
+    transform: scale(1.05);
+}
+
+button{
+    width: 160px;
+}
+img{
+    width:160px;
+    height: 220px
+}
+
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+a:link{
+    text-decoration: none;
+}
