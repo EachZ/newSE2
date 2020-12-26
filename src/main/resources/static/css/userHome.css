@@ -130,6 +130,9 @@ img{
     width:160px;
     height: 220px
 }
+.box li{
+    margin: 0 auto;position: relative;top: 50%;transform: translateY(-50%);
+}
 
 a{
     text-decoration: none;
@@ -182,7 +185,7 @@ a:link{
 }
 
 .number{
-    font-size: larger;
+    font-size: 23px;
     color:#777777;
     margin-right: 20px;
 }
