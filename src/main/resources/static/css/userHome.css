@@ -116,11 +116,11 @@
 /*}*/
 
 .movie-block{
-    text-align: center;
+    /*text-align: center;*/
     margin: 0 auto;
 }
 .movie-block:hover{
-    transform: scale(1.05);
+    /*transform: scale(1.05);*/
 }
 
 button{
@@ -142,4 +142,60 @@ a:visited{
 }
 a:link{
     text-decoration: none;
+}
+
+.thediv {
+    position: relative;
+}
+
+.tip {
+    width: 160px;
+    display: block;
+    padding-left: 10px;
+    line-height: 30px;
+    /*background-color: rgba(255,255,255,0.1);*/
+    /*background-color: #01130169;*/
+    background:-webkit-linear-gradient(
+        top,transparent,#011001bd
+    );
+    /*background-color: #333;*/
+    opacity: 0.9;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.movie-name{
+    float:left
+}
+.movie-score{
+    float:right;
+    color:gold;
+    font-style: italic;
+    margin-right:10px
+}
+.box{
+    height:50px
+}
+
+.number{
+    font-size: larger;
+    color:#777777;
+    margin-right: 20px;
+}
+.top-number{
+    color:crimson;
+    float:left;
+}
+.boxingRate{
+/*    票房数字*/
+    color:crimson;
+    float:right
+}
+.popularNum{
+    color: orange;
+    float: right;
 }

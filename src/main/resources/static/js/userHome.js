@@ -1,7 +1,7 @@
 $(document).ready(function() {
-    getBoxingRate();
+    // getBoxingRate();
 
-    getPopularMovie();
+    // getPopularMovie();
     function getBoxingRate(){
         // var nameList=["美国队长","雷神索尔","阿斯加德"]
         // var boxOffice=[99,98,97];
