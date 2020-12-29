@@ -41,8 +41,8 @@ $(document).ready(function(){
                 "<span class='movie-want'><i class='icon-heart error-text'></i>" + (movie.likeCount || 0) + "人想看</span>" +
                 "</div>" +
                 "<div class='movie-description dark-text'><span>" + movie.description + "</span></div>" +
-                "<div>类型：" + movie.type + "</div>" +
-                "<div style='display: flex'><span>导演：" + movie.director + "</span><span style='margin-left: 30px;'>主演：" + movie.starring + "</span>" +
+                "<div><strong>类型</strong>：" + movie.type + "</div>" +
+                "<div style='display: flex'><span><strong>导演</strong>：" + movie.director + "</span><span style='margin-left: 30px;'><strong>主演</strong>：" + movie.starring + "</span>" +
                 "</div>" +
                 "</div>"+
                 "</li>"+

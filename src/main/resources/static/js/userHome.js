@@ -1,20 +1,153 @@
 $(document).ready(function() {
+    //正在热映
+    getHot();
+    //即将上映
+    getComing();
+    //票房统计
     getBoxingRate();
-    function alertWin(message) {
-        console.log(message);
-        var meStr="<h3><span class='label label-default' style='color:white;position:absolute;z-index:10; top: 80px;'" +
-            ">"+message+"</span></h3>>"
-        $('#alertWindow').html(meStr);
-        $("#alertWindow").show().delay(1500).hide(50);
-        // $("#alertWindow").show();
-    }
+    //最受欢迎
     getPopularMovie();
+
+    function getComing(){
+        getRequest(
+            '/humanComputer/will',
+            function (res) {
+                var row3String='';
+                var row4String='';
+                var data = res.content || [];
+                console.log(data);
+
+                var nameList = data.map(function (item) {
+                    return item.name;
+                });
+
+                var idList=data.map(function (item) {
+                    return item.movieId;
+                });
+
+                var linkList=data.map(function (item) {
+                    return item.link;
+                });
+                var scoreList=data.map(function (item) {
+                    return item.score;
+                });
+
+                for(var i=0;i<nameList.length;i++){
+                    if(i===0||i===1||i===2||i===3){
+                        row3String=row3String+
+                            '<div class="col-md-3 movie-block">\n' +
+                            '                        <a target="_blank" href="/user/movieDetail?id='+idList[i]+'">\n' +
+                            '                            <div class="thediv">\n' +
+                            '                                <img class="movie-img" src="'+linkList[i]+'">\n' +
+                            '                                <div class="tip">\n' +
+                            '                                    <span class="movie-name">'+nameList[i]+'</span>\n' +
+                            '                                    <span class="movie-score">'+scoreList[i]+'</span>\n' +
+                            '                                </div>\n' +
+                            '                            </div>\n' +
+                            '                            <button type="button" class="btn btn-default" style="border-radius: 0px;">购票</button>\n' +
+                            '                        </a>\n' +
+                            '                    </div>'
+                    }
+                }
+                $("#row3").append(row3String);
+
+                for(var i=0;i<nameList.length;i++){
+                    if(i===4||i===5||i===6||i===7){
+                        row4String=row4String+
+                            '<div class="col-md-3 movie-block">\n' +
+                            '                        <a target="_blank" href="/user/movieDetail?id='+idList[i]+'">\n' +
+                            '                            <div class="thediv">\n' +
+                            '                                <img class="movie-img" src="'+linkList[i]+'">\n' +
+                            '                                <div class="tip">\n' +
+                            '                                    <span class="movie-name">'+nameList[i]+'</span>\n' +
+                            '                                    <span class="movie-score">'+scoreList[i]+'</span>\n' +
+                            '                                </div>\n' +
+                            '                            </div>\n' +
+                            '                            <button type="button" class="btn btn-default" style="border-radius: 0px;">购票</button>\n' +
+                            '                        </a>\n' +
+                            '                    </div>'
+                    }
+                }
+                $("#row4").append(row4String);
+            },
+            function (error) {
+                alert(JSON.stringify(error));
+            });
+    }
+
+    function getHot(){
+        getRequest(
+            '/humanComputer/hot',
+            function (res) {
+                var row1String='';
+                var row2String='';
+                var data = res.content || [];
+                console.log(data);
+
+                var nameList = data.map(function (item) {
+                    return item.name;
+                });
+
+                var idList=data.map(function (item) {
+                    return item.movieId;
+                });
+
+                var linkList=data.map(function (item) {
+                    return item.link;
+                });
+                var scoreList=data.map(function (item) {
+                    return item.score;
+                });
+
+                for(var i=0;i<nameList.length;i++){
+                    if(i===0||i===1||i===2||i===3){
+                        row1String=row1String+
+                            '<div class="col-md-3 movie-block">\n' +
+                            '                        <a target="_blank" href="/user/movieDetail?id='+idList[i]+'">\n' +
+                            '                            <div class="thediv">\n' +
+                            '                                <img class="movie-img" src="'+linkList[i]+'">\n' +
+                            '                                <div class="tip">\n' +
+                            '                                    <span class="movie-name">'+nameList[i]+'</span>\n' +
+                            '                                    <span class="movie-score">'+scoreList[i]+'</span>\n' +
+                            '                                </div>\n' +
+                            '                            </div>\n' +
+                            '                            <button type="button" class="btn btn-default" style="border-radius: 0px;">购票</button>\n' +
+                            '                        </a>\n' +
+                            '                    </div>'
+                    }
+                }
+                $("#row1").append(row1String);
+
+                for(var i=0;i<nameList.length;i++){
+                    if(i===4||i===5||i===6||i===7){
+                        row2String=row2String+
+                            '<div class="col-md-3 movie-block">\n' +
+                            '                        <a target="_blank" href="/user/movieDetail?id='+idList[i]+'">\n' +
+                            '                            <div class="thediv">\n' +
+                            '                                <img class="movie-img" src="'+linkList[i]+'">\n' +
+                            '                                <div class="tip">\n' +
+                            '                                    <span class="movie-name">'+nameList[i]+'</span>\n' +
+                            '                                    <span class="movie-score">'+scoreList[i]+'</span>\n' +
+                            '                                </div>\n' +
+                            '                            </div>\n' +
+                            '                            <button type="button" class="btn btn-default" style="border-radius: 0px;">购票</button>\n' +
+                            '                        </a>\n' +
+                            '                    </div>'
+                    }
+                }
+                $("#row2").append(row2String);
+            },
+            function (error) {
+                alert(JSON.stringify(error));
+            });
+    }
+
+    //票房统计
     function getBoxingRate(){
-        // var nameList=["美国队长","雷神索尔","阿斯加德"]
-        // var boxOffice=[99,98,97];
+
         var nameList=[];
         getRequest(
-            '/statistics/boxOffice/total',
+            '/humanComputer/money',
             function (res) {
                 var data = res.content || [];
                 console.log(data);
@@ -26,43 +159,50 @@ $(document).ready(function() {
                 console.log(nameList.length);
                 var idList=data.map(function (item) {
                     return item.movieId;
-                })
+                });
+                var rateList=data.map(function (item) {
+                    return item.money;
+                });
                 for(var i=0;i<nameList.length;i++){
-                    if(i==0||i==1||i==2){
+                    if(i===0||i===1||i===2){
                         boxingStr=boxingStr+
-                            '<a href="/user/movieDetail?id='+idList[i]+'">'+
-                            '<div class="statistic-item">'+
-                            '<li class="fire">' +
-                            '<span class="icon-fire"></span>'+"     "+nameList[i]+
-                            '</li>'+
-                            '<span class="badge">'+(i+1).toString()+'</span>'+
-                            '</div>'+
-                            '</a>'
+                            '<a target="_blank" href="/user/movieDetail?id='+idList[i]+'">\n' +
+                            '                                <div class="box">\n' +
+                            '                                    <li>\n' +
+                            '                                        <i class="number top-number">'+(i+1)+'</i>\n' +
+                            '                                        <span>'+nameList[i]+'</span>\n' +
+                            '                                        <span class="boxingRate">'+rateList[i]+'</span>\n' +
+                            '                                    </li>\n' +
+                            '                                </div>\n' +
+                            '                            </a>'
                     }
                     else {
                         boxingStr = boxingStr +
-                            '<a href="/user/movieDetail?id='+idList[i]+'">'+
-                            '<div class="statistic-item">' +
-                            '<li class="thumbs">' +
-                            '<span class="icon-thumbs-up"></span>'+"    "+nameList[i]+
-                            '</li>'+
-                            '<span class="error-text">' + (i+1).toString() + '</span>' +
-                            '</div>'+
-                            '</a>'
+                            '<a target="_blank" href="/user/movieDetail?id='+idList[i]+'">\n' +
+                            '                                <div class="box">\n' +
+                            '                                    <li>\n' +
+                            '                                        <i class="number">'+(i+1)+'</i>\n' +
+                            '                                        <span>'+nameList[i]+'</span>\n' +
+                            '                                        <span class="boxingRate">'+rateList[i]+'</span>\n' +
+                            '                                    </li>\n' +
+                            '                                </div>\n' +
+                            '                            </a>'
                     }
                 }
                 console.log(boxingStr);
                 $("#boxingOffice").append(boxingStr);
             },
             function (error) {
-                alertWin(JSON.stringify(error));
+                alert(JSON.stringify(error));
             });
         //
     }
+
+    //最受欢迎
     function getPopularMovie(){
         var nameList=[];
         getRequest(
-            '/statistics/popular/movie?days='+30+"&movieNum="+7,
+            '/humanComputer/like',
             function (res) {
                 var data = res.content || [];
                 console.log(data);
@@ -74,32 +214,41 @@ $(document).ready(function() {
                 console.log(nameList.length);
                 var idList=data.map(function (item) {
                     return item.movieId;
-                })
+                });
+                var likeList=data.map(function (item) {
+                    return item.likeNum;
+                });
                 for(var i=0;i<nameList.length;i++){
-                    if(i==0||i==1||i==2){
+                    if(i===0||i===1||i===2){
                         boxingStr=boxingStr+
-                            '<a href="/user/movieDetail?id='+idList[i]+'">'+
-                            '<div class="statistic-item">'+
-                            '<span class="icon-fire">'+nameList[i]+'</span>'+
-                            '<span class="badge">'+(i+1).toString()+'</span>'+
-                            '</div>'+
-                            '</a>'
+                            '<a target="_blank" href="/user/movieDetail?id='+idList[i]+'">\n' +
+                            '                                <div class="box">\n' +
+                            '                                    <li>\n' +
+                            '                                        <i class="number top-number">'+(i+1)+'</i>\n' +
+                            '                                        <span>'+nameList[i]+'</span>\n' +
+                            '                                        <span class="popularNum">'+likeList[i]+'</span>\n' +
+                            '                                    </li>\n' +
+                            '                                </div>\n' +
+                            '                            </a>'
                     }
                     else {
                         boxingStr = boxingStr +
-                            '<a href="/user/movieDetail?id='+idList[i]+'">'+
-                            '<div class="statistic-item">' +
-                            '<span class="icon-thumbs-up">' + nameList[i] + '</span>' +
-                            '<span class="error-text">' + (i+1).toString() + '</span>' +
-                            '</div>'+
-                            '</a>'
+                            '<a target="_blank" href="/user/movieDetail?id='+idList[i]+'">\n' +
+                            '                                <div class="box">\n' +
+                            '                                    <li>\n' +
+                            '                                        <i class="number">'+(i+1)+'</i>\n' +
+                            '                                        <span>'+nameList[i]+'</span>\n' +
+                            '                                        <span class="popularNum">'+likeList[i]+'</span>\n' +
+                            '                                    </li>\n' +
+                            '                                </div>\n' +
+                            '                            </a>'
                     }
                 }
                 console.log(boxingStr);
                 $("#popularMovie").append(boxingStr);
             },
             function (error) {
-                alertWin(JSON.stringify(error));
+                alert(JSON.stringify(error));
             });
     }
 });

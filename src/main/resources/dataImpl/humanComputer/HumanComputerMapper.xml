@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.cinema.data.humanComputer.HumanComputerMapper">
+
+    <select id="getHotMovie" resultMap="HotAndWillMovie">
+        select id,`name` ,poster_url ,score
+        from movie m
+        where #{date} >= m.start_date and m.`status`="0"
+				ORDER BY score DESC
+    </select>
+
+    <select id="getWillMovie" resultMap="HotAndWillMovie">
+        select id,`name`,poster_url,score
+        from movie m
+        where m.start_date>=#{date}
+        ORDER BY `like` DESC
+    </select>
+
+
+    <select id="getMovieAndMoney" resultMap="MovieAndMoney">
+        select id,`name`,money
+        from movie m where m.money!=""
+        ORDER BY money DESC
+    </select>
+
+    <select id="getMovieAndLikeNum" resultMap="MovieAndLikeNum">
+        select id,`name`,`like`
+        from movie m where m.like!=""
+         ORDER BY m.like DESC
+    </select>
+
+    <resultMap id="HotAndWillMovie" type="com.example.cinema.po.HotAndWillMovie">
+        <result column="id" property="movieId"></result>
+        <result column="name" property="name"></result>
+        <result column="poster_url" property="link"></result>
+        <result column="score" property="score"></result>
+    </resultMap>
+
+    <resultMap id="MovieAndMoney" type="com.example.cinema.po.MovieAndMoney">
+        <result column="id" property="movieId"></result>
+        <result column="name" property="name"></result>
+        <result column="money" property="money"></result>
+    </resultMap>
+
+    <resultMap id="MovieAndLikeNum" type="com.example.cinema.po.MovieAndLikeNum">
+        <result column="id" property="movieId"></result>
+        <result column="name" property="name"></result>
+        <result column="like" property="likeNum"></result>
+    </resultMap>
+
+</mapper>
