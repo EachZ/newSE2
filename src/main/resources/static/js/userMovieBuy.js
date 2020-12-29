@@ -24,7 +24,7 @@ $(document).ready(function () {
     scheduleId = parseInt(window.location.href.split('?')[1].split('&')[1].split('=')[1]);
     function alertWin(message) {
         console.log(message);
-        var meStr="<h3><span class='label label-default' style='color:white;position:absolute;z-index:10; top: 80px;'" +
+        var meStr="<h3><span class='label label-danger' style='color:white;position:absolute;z-index:10; top: 80px;'" +
             ">"+message+"</span></h3>>"
         $('#alertWindow').html(meStr);
         $("#alertWindow").show().delay(1500).hide(50);
