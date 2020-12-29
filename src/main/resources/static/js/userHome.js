@@ -1,6 +1,13 @@
 $(document).ready(function() {
     getBoxingRate();
-
+    function alertWin(message) {
+        console.log(message);
+        var meStr="<h3><span class='label label-default' style='color:white;position:absolute;z-index:10; top: 80px;'" +
+            ">"+message+"</span></h3>>"
+        $('#alertWindow').html(meStr);
+        $("#alertWindow").show().delay(1500).hide(50);
+        // $("#alertWindow").show();
+    }
     getPopularMovie();
     function getBoxingRate(){
         // var nameList=["美国队长","雷神索尔","阿斯加德"]
@@ -48,7 +55,7 @@ $(document).ready(function() {
                 $("#boxingOffice").append(boxingStr);
             },
             function (error) {
-                alert(JSON.stringify(error));
+                alertWin(JSON.stringify(error));
             });
         //
     }
@@ -92,7 +99,7 @@ $(document).ready(function() {
                 $("#popularMovie").append(boxingStr);
             },
             function (error) {
-                alert(JSON.stringify(error));
+                alertWin(JSON.stringify(error));
             });
     }
 });

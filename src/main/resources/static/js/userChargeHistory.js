@@ -1,7 +1,14 @@
 $(document).ready(function () {
     //这个页面是用户的购买记录
     getMovieList();
-
+    function alertWin(message) {
+        console.log(message);
+        var meStr="<h3><span class='label label-default' style='color:white;position:absolute;z-index:10; top: 80px;'" +
+            ">"+message+"</span></h3>>"
+        $('#alertWindow').html(meStr);
+        $("#alertWindow").show().delay(1500).hide(50);
+        // $("#alertWindow").show();
+    }
     function getMovieList() {
         getRequest(
             '/vip/' + sessionStorage.getItem('id')+"/getChargeHistory",
@@ -13,7 +20,7 @@ $(document).ready(function () {
 
             },
             function (error) {
-                alert(error);
+                alertWin(error);
             });
 
         // var form=[{

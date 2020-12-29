@@ -1,5 +1,12 @@
 $(document).ready(function () {
-
+    function alertWin(message) {
+        console.log(message);
+        var meStr="<h3><span class='label label-default' style='color:white;position:absolute;z-index:10; top: 80px;'" +
+            ">"+message+"</span></h3>>"
+        $('#alertWindow').html(meStr);
+        $("#alertWindow").show().delay(1500).hide(50);
+        // $("#alertWindow").show();
+    }
     $("#signUp-btn").click(function () {
         var formData = getSignUpForm();
         if (!validateSignUpForm(formData)) {
@@ -11,14 +18,14 @@ $(document).ready(function () {
             formData,
             function (res) {
                 if (res.success) {
-                    alert("注册成功");
+                    alertWin("注册成功");
                     window.location.href = "/index";
                 } else {
-                    alert(res.message);
+                    alertWin(res.message);
                 }
             },
             function (error) {
-                alert(error);
+                alertWin(error);
             });
     });
 
