@@ -2,7 +2,14 @@ $(document).ready(function () {
     getVIP();
     getCoupon();
 });
-
+function alertWin(message) {
+    console.log(message);
+    var meStr="<h3><span class='label label-danger' style='color:white;position:absolute;z-index:10; top: 80px;'" +
+        ">"+message+"</span></h3>>"
+    $('#alertWindow').html(meStr);
+    $("#alertWindow").show().delay(1500).hide(50);
+    // $("#alertWindow").show();
+}
 var isBuyState = true;
 var vipCardId;
 
@@ -27,7 +34,7 @@ function getVIP() {
             }
         },
         function (error) {
-            alert(error);
+            alertWin(error);
         });
 
     getRequest(
@@ -38,12 +45,12 @@ function getVIP() {
                 $("#member-buy-description").text("充值优惠：每满" + res.content.charge+"送"+res.content.bonus + "。永久有效");
                 $("#member-description").text("每满" + res.content.charge+"送"+res.content.bonus);
             } else {
-                alert(res.content);
+                alertWin(res.content);
             }
 
         },
         function (error) {
-            alert(error);
+            alertWin(error);
         });
 }
 
@@ -76,11 +83,11 @@ function confirmCommit() {
                     null,
                     function (res) {
                         $('#buyModal').modal('hide');
-                        alert("购买会员卡成功");
+                        alertWin("购买会员卡成功");
                         getVIP();
                     },
                     function (error) {
-                        alert(error);
+                        alertWin(error);
                     });
             } else {
                 postRequest(
@@ -88,15 +95,15 @@ function confirmCommit() {
                     {vipId: vipCardId, amount: parseInt($('#userMember-amount').val())},
                     function (res) {
                         $('#buyModal').modal('hide');
-                        alert("充值成功");
+                        alertWin("充值成功");
                         getVIP();
                     },
                     function (error) {
-                        alert(error);
+                        alertWin(error);
                     });
             }
         } else {
-            alert("银行卡号或密码错误");
+            alertWin("银行卡号或密码错误");
         }
     }
 }
@@ -152,7 +159,7 @@ function getCoupon() {
             }
         },
         function (error) {
-            alert(error);
+            alertWin(error);
         });
 }
 

@@ -22,7 +22,14 @@ var couponIndexNow=0;
 $(document).ready(function () {
     //获得排片id
     scheduleId = parseInt(window.location.href.split('?')[1].split('&')[1].split('=')[1]);
-
+    function alertWin(message) {
+        console.log(message);
+        var meStr="<h3><span class='label label-danger' style='color:white;position:absolute;z-index:10; top: 80px;'" +
+            ">"+message+"</span></h3>>"
+        $('#alertWindow').html(meStr);
+        $("#alertWindow").show().delay(1500).hide(50);
+        // $("#alertWindow").show();
+    }
     getInfo();
 
     function getInfo() {
@@ -35,7 +42,7 @@ $(document).ready(function () {
                 }
             },
             function (error) {
-                alert(JSON.stringify(error));
+                alertWin(JSON.stringify(error));
             }
         );
     }
@@ -174,7 +181,7 @@ function orderConfirmClick() {
             renderOrder(orderInfo);
         },
         function (error) {
-            alert(error);
+            alertWin(error);
         }
     );
 
@@ -207,7 +214,7 @@ function orderConfirmClick() {
             }
         },
         function (error) {
-            alert(error);
+            alertWin(error);
         });
 }
 
@@ -300,11 +307,11 @@ function payConfirmClick() {
                 if(res.success){
                     postPayRequest();
                 }else{
-                    alert(res.message);
+                    alertWin(res.message);
                 }
             },
             function (error) {
-                alert(error);
+                alertWin(error);
             }
         );
 
@@ -321,11 +328,11 @@ function payConfirmClick() {
                         postPayRequest();
                     },
                     function (error) {
-                        alert(error);
+                        alertWin(error);
                     }
                 );
             } else {
-                alert("银行卡号或密码错误");
+                alertWin("银行卡号或密码错误");
             }
         }
     }

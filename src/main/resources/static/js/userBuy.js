@@ -3,7 +3,14 @@ $(document).ready(function () {
     //用户的电影票中需要有：
     //电影名称、影厅名、座位、放映时间、预计结束时间、状态
     $(".none-data-tip").css("display","none");
-
+    function alertWin(message) {
+        console.log(message);
+        var meStr="<h3><span class='label label-danger' style='color:white;position:absolute;z-index:10; top: 80px;'" +
+            ">"+message+"</span></h3>>"
+        $('#alertWindow').html(meStr);
+        $("#alertWindow").show().delay(1500).hide(50);
+        // $("#alertWindow").show();
+    }
     getMovieList();
 
     var canRefund;
@@ -24,7 +31,7 @@ $(document).ready(function () {
 
             },
             function (error) {
-                alert(error);
+                alertWin(error);
             });
 
         //////////////////假数据///////////////////
@@ -93,7 +100,7 @@ $(document).ready(function () {
                     fillTable(order,seats,ticketInfo);
                 },
                 function(error){
-                    alert(error);
+                    alertWin(error);
                 }
             )
 
@@ -197,10 +204,10 @@ $(document).ready(function () {
                 console.log("eeeeeeeeeeeeee");
                 console.log(selectedTicketsId);
                 if(selectedTicketsId.length===0){
-                    alert("请选择需要退的订单");
+                    alertWin("请选择需要退的订单");
                 }else{
                     if(!canRefund){
-                        alert("退票不合规范，请重新选择");
+                        alertWin("退票不合规范，请重新选择");
                         can=[];
                     }else{
                         getRequest(
@@ -210,13 +217,13 @@ $(document).ready(function () {
                             function (res) {
                                 if(res.success){
                                     getMovieList();
-                                    alert("删除成功！");
+                                    alertWin("删除成功！");
                                 } else {
-                                    alert(res.message);
+                                    alertWin(res.message);
                                 }
                             },
                             function (error) {
-                                alert(JSON.stringify(error));
+                                alertWin(JSON.stringify(error));
                             }
                         )
                     }

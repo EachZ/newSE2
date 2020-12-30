@@ -1,4 +1,12 @@
 $(document).ready(function(){//页面一加载好后就执行该匿名函数
+    function alertWin(message) {
+        console.log(message);
+        var meStr="<h3><span class='label label-danger' style='color:white;position:absolute;z-index:10; top: 80px;'" +
+            ">"+message+"</span></h3>>"
+        $('#alertWindow').html(meStr);
+        $("#alertWindow").show().delay(1500).hide(50);
+        // $("#alertWindow").show();
+    }
 
     var movieId = parseInt(window.location.href.split('?')[1].split('&')[0].split('=')[1]);
     var userId = sessionStorage.getItem('id');
@@ -44,7 +52,7 @@ $(document).ready(function(){//页面一加载好后就执行该匿名函数
                myChart.setOption(option);
            },
            function (error) {
-               alert(error);
+               alertWin(error);
            }
        );
     }
@@ -58,7 +66,7 @@ $(document).ready(function(){//页面一加载好后就执行该匿名函数
                 repaintMovieDetail(data);
             },
             function (error) {
-                alert(error);
+                alertWin(error);
             }
         );
     }
@@ -101,7 +109,7 @@ $(document).ready(function(){//页面一加载好后就执行该匿名函数
                 getMovie();
             },
             function (error) {
-                alert(error);
+                alertWin(error);
             });
     });
 
@@ -115,10 +123,10 @@ $(document).ready(function(){//页面一加载好后就执行该匿名函数
                 initMovieEditForm(data);
             },
             function (error) {
-                alert(error);
+                alertWin(error);
             }
         );
-       //alert('交给你们啦，修改时需要在对应html文件添加表单然后获取用户输入，提交给后端，别忘记对用户输入进行验证。（可参照添加电影&添加排片&修改排片）');
+       //alertWin('交给你们啦，修改时需要在对应html文件添加表单然后获取用户输入，提交给后端，别忘记对用户输入进行验证。（可参照添加电影&添加排片&修改排片）');
     });
 
     $("#delete-btn").click(function () {//下架电影
@@ -131,18 +139,18 @@ $(document).ready(function(){//页面一加载好后就执行该匿名函数
                 function(res){
                     if(res.success){
                         //还要更改该电影的class，对用户进行提示！！！
-                        alert("下架电影成功");
+                        alertWin("下架电影成功");
                         getMovie();
                     }else{
-                        alert((res.message()))
+                        alertWin((res.message()))
                     }
                 },
                 function (error) {
-                alert(JSON.stringify(error));
+                alertWin(JSON.stringify(error));
             }
             )
         }
-        //alert('交给你们啦，下架别忘记需要一个确认提示框，也别忘记下架之后要对用户有所提示哦');
+        //alertWin('交给你们啦，下架别忘记需要一个确认提示框，也别忘记下架之后要对用户有所提示哦');
     });
 
     function initMovieEditForm(movie){
@@ -192,7 +200,7 @@ $(document).ready(function(){//页面一加载好后就执行该匿名函数
                 $("#movieEditModal").modal('hide');//表单隐藏
                },
             function (error) {
-                alert(error);
+                alertWinWin(error);
             }
         );
     })
