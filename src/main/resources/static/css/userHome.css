@@ -183,6 +183,10 @@ a:link{
 .box{
     height:50px
 }
+.box:hover{
+    padding: .2em;
+    background-color:#f9c1c16e;
+}
 
 .number{
     font-size: 23px;
@@ -202,3 +206,10 @@ a:link{
     color: orange;
     float: right;
 }
+.movieName{
+    color:black;
+}
+
+/*.movieName:hover{*/
+/*    color:crimson;*/
+/*}*/

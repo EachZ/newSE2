@@ -1097,13 +1097,15 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #337ab7;
+  /*color: #337ab7;*/
+  color:crimson;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #23527c;
-  text-decoration: underline;
+  /*color: #23527c;*/
+  color:darkred;
+  /*text-decoration: underline;*/
 }
 a:focus {
   outline: 5px auto -webkit-focus-ring-color;
@@ -3057,10 +3059,10 @@ fieldset[disabled] a.btn {
   pointer-events: none;
 }
 .btn-default {
-  color: red;
+  color: crimson;
   background-color: #fff;
   /*border-color: #efefef;*/
-  border-color: red;
+  border-color: crimson;
 }
 .btn-default:focus,
 .btn-default.focus {
@@ -3070,7 +3072,7 @@ fieldset[disabled] a.btn {
 }
 .btn-default:hover {
   color: white;
-  background-color: red;
+  background-color: crimson;
   border-color: transparent;
   /*box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);*/
 }
@@ -3562,7 +3564,8 @@ tbody.collapse.in {
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
-  color: #262626;
+  /*color: #262626;*/
+  color:red;
   text-decoration: none;
   background-color: #f5f5f5;
 }
@@ -3571,7 +3574,8 @@ tbody.collapse.in {
 .dropdown-menu > .active > a:focus {
   color: #fff;
   text-decoration: none;
-  background-color: #337ab7;
+  /*background-color: #337ab7;*/
+  background-color: red;
   outline: 0;
 }
 .dropdown-menu > .disabled > a,
@@ -4036,9 +4040,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-  color: #555;
+  /*color: #555;*/
+  color:white;
   cursor: default;
-  background-color: #fff;
+  /*background-color: #fff;*/
+  background-color: crimson;
   border: 1px solid #ddd;
   border-bottom-color: transparent;
 }
@@ -4499,7 +4505,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-color: #e7e7e7;
 }
 .navbar-default .navbar-brand {
-  color: #777;
+  /*color: #777;*/
+  color:crimson;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
@@ -4510,18 +4517,22 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #777;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #777;
+  /*color: #777;*/
+  color:black;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #333;
+  /*color: #333;*/
+  color:crimson;
   background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #555;
-  background-color: #e7e7e7;
+  /*color: #555;*/
+  /*background-color: #e7e7e7;*/
+  color:white;
+  background-color: crimson;
 }
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,

@@ -3,9 +3,11 @@
     padding-left: 15px;
 }
 #myTable{
-    color:#36965D;
+    /*color:#36965D;*/
+    color:crimson;
 }
 #historyModalLabel{
-    color:forestgreen;
+    /*color:forestgreen;*/
+    color: indianred;
     padding-left: auto;
 }

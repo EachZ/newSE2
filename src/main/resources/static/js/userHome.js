@@ -170,7 +170,7 @@ $(document).ready(function() {
                             '                                <div class="box">\n' +
                             '                                    <li>\n' +
                             '                                        <i class="number top-number">'+(i+1)+'</i>\n' +
-                            '                                        <span>'+nameList[i]+'</span>\n' +
+                            '                                        <span class="movieName">'+nameList[i]+'</span>\n' +
                             '                                        <span class="boxingRate">'+rateList[i]+'</span>\n' +
                             '                                    </li>\n' +
                             '                                </div>\n' +
@@ -182,7 +182,7 @@ $(document).ready(function() {
                             '                                <div class="box">\n' +
                             '                                    <li>\n' +
                             '                                        <i class="number">'+(i+1)+'</i>\n' +
-                            '                                        <span>'+nameList[i]+'</span>\n' +
+                            '                                        <span class="movieName">'+nameList[i]+'</span>\n' +
                             '                                        <span class="boxingRate">'+rateList[i]+'</span>\n' +
                             '                                    </li>\n' +
                             '                                </div>\n' +
@@ -225,7 +225,7 @@ $(document).ready(function() {
                             '                                <div class="box">\n' +
                             '                                    <li>\n' +
                             '                                        <i class="number top-number">'+(i+1)+'</i>\n' +
-                            '                                        <span>'+nameList[i]+'</span>\n' +
+                            '                                        <span class="movieName">'+nameList[i]+'</span>\n' +
                             '                                        <span class="popularNum">'+likeList[i]+'</span>\n' +
                             '                                    </li>\n' +
                             '                                </div>\n' +
@@ -237,7 +237,7 @@ $(document).ready(function() {
                             '                                <div class="box">\n' +
                             '                                    <li>\n' +
                             '                                        <i class="number">'+(i+1)+'</i>\n' +
-                            '                                        <span>'+nameList[i]+'</span>\n' +
+                            '                                        <span class="movieName">'+nameList[i]+'</span>\n' +
                             '                                        <span class="popularNum">'+likeList[i]+'</span>\n' +
                             '                                    </li>\n' +
                             '                                </div>\n' +
