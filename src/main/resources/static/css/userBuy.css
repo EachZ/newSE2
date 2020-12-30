@@ -1,5 +1,6 @@
-.table{
-    color:#36965D;
+thead{
+    /*color:#36965D;*/
+    color:crimson;
 }
 
 .table-wrapper {
@@ -7,7 +8,7 @@
 }
 
 .table-wrapper .table b {
-    color: #1caf9a;
+    /*color: #1caf9a;*/
     font-size: 20px;
 }
 
@@ -33,4 +34,14 @@
 .card .header .title {
     font-size: 24px;
     font-weight: 500;
+}
+
+.btn-my{
+    background-color:crimson;
+    color:white;
+}
+
+.btn-my:hover{
+    background-color: darkred;
+    color:white;
 }

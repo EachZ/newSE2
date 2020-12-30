@@ -39,7 +39,7 @@
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
-    border: 1px solid #1caf9a;
+    border: 1px solid darkred;
 }
 
 .card .info .price {
@@ -47,7 +47,8 @@
 }
 
 .card .info .price b {
-    color: #1caf9a;
+    /*color: #1caf9a;*/
+    color:crimson;
     font-size: 32px;
 }
 
@@ -73,7 +74,8 @@
     bottom: 0;
     width: 100%;
     padding: 10px 0;
-    background: #1caf9a;
+    /*background: #1caf9a;*/
+    background-color:crimson;
     font-size: 16px;
     color: #fff;
     line-height: 26px;
@@ -89,7 +91,8 @@
     /* 相对定位，方便让before和after伪元素绝对定位偏移 */
     position: relative;
     overflow: hidden;
-    background: #1caf9a;
+    /*background: #1caf9a;*/
+    background-color: crimson;
     height: 120px;
     margin: 5px;
 }
@@ -153,4 +156,14 @@
 
 .notice {
      margin-left: 12px;
+}
+
+.btn-my{
+    background-color:crimson;
+    color:white;
+}
+
+.btn-my:hover{
+    background-color: darkred;
+    color:white;
 }

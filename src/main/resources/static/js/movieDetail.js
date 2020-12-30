@@ -77,7 +77,7 @@ $(document).ready(function(){//页面一加载好后就执行该匿名函数
         //“想看”中的爱心图标，如果不想看，就移除class,如果想看，就增加class
         !isLike ? $('.icon-heart').removeClass('error-text') : $('.icon-heart').addClass('error-text');
         //如果想看，就文字替换为“已想看”，如果还没有想看，点击按钮之后，文字就显示为“想 看”
-        $('#like-btn span').text(isLike ? ' 已想看' : ' 想 看');
+        $('#like-btn strong').text(isLike ? ' 已想看' : ' 想 看');
         //设置属性，电影的海报
         $('#movie-img').attr('src',movie.posterUrl);
         $('#movie-name').text(movie.name);

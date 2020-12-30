@@ -21,3 +21,11 @@
 .to-buy-btn {
     margin-left: auto;
 }
+
+.co{
+    color:#337ab7;
+}
+
+.co:hover{
+    color:crimson;
+}

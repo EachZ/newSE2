@@ -2,6 +2,7 @@
     padding-top: 15px;
     padding-left: 15px;
 }
-#myTable{
-    color:#36965D;
+thead{
+    /*color:#36965D;*/
+    color:crimson;
 }
