@@ -38,7 +38,7 @@ $(document).ready(function(){
                 "<div class='movie-title'>" +
                 "<span class='co'><strong>" + movie.name + "</strong></span>" +
                 "<span class='label "+(!movie.status ? 'primary-bg' : 'error-bg')+"'>" + (movie.status ? '已下架' : (new Date(movie.startDate)>=new Date()?'未上映':'热映中')) + "</span>" +
-                "<span class='movie-want'><i class='icon-heart error-text'></i>" + (movie.likeCount || 0) + "人想看</span>" +
+                // "<span class='movie-want'><i class='icon-heart error-text'></i>" + (movie.likeCount || 0) + "人想看</span>" +
                 "</div>" +
                 "<div class='movie-description dark-text'><span>" + movie.description + "</span></div>" +
                 "<div class='co'><strong>类型</strong>：" + movie.type + "</div>" +

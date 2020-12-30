@@ -68,7 +68,7 @@ $(document).ready(function () {
             "       <div>"+history.state+"</div>" +
             "   </td>" +
             "   <td>" +
-            "<button class='history-item' data-history='"+JSON.stringify(history)+"' >"+"详情</button>"+
+            "<button class='btn btn-default' data-history='"+JSON.stringify(history)+"' >"+"详情</button>"+
             "   </td>" +
             "</tr>";
         $("#myTable").append(ticketStr);

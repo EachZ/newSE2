@@ -57,8 +57,26 @@ public class MovieServiceImpl implements MovieService, MovieServiceForBl {
 
     @Override
     public ResponseVO searchAllMovie() {
+        System.out.println("wq");
         try {
-            return ResponseVO.buildSuccess(movieList2MovieVOList(movieMapper.selectAllMovie()));
+            List<Movie> movieBefore=movieMapper.selectAllMovie();
+            List<Movie> xiajia=new ArrayList<>();
+            List<Movie> result=new ArrayList<>();
+            for(Movie m:movieBefore){
+                if(m.getStatus()==1){
+                    xiajia.add(m);
+                }
+                else{
+                    result.add(m);
+                }
+            }
+            for(Movie m:xiajia){
+                result.add(m);
+            }
+            for(Movie m:result){
+                System.out.println(m.getName());
+            }
+            return ResponseVO.buildSuccess(movieList2MovieVOList(result));
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseVO.buildFailure("失败");
@@ -78,7 +96,31 @@ public class MovieServiceImpl implements MovieService, MovieServiceForBl {
     @Override
     public ResponseVO getMovieByKeyword(String keyword) {
         if (keyword == null || keyword.equals("")) {
-            return ResponseVO.buildSuccess(movieList2MovieVOList(movieMapper.selectAllMovie()));
+            System.out.println("wq");
+            try {
+                List<Movie> movieBefore=movieMapper.selectAllMovie();
+                List<Movie> xiajia=new ArrayList<>();
+                List<Movie> result=new ArrayList<>();
+                for(Movie m:movieBefore){
+                    if(m.getStatus()==1){
+                        xiajia.add(m);
+                    }
+                    else{
+                        result.add(m);
+                    }
+                }
+                for(Movie m:xiajia){
+                    result.add(m);
+                }
+                for(Movie m:result){
+                    System.out.println(m.getName());
+                }
+                return ResponseVO.buildSuccess(movieList2MovieVOList(result));
+            } catch (Exception e) {
+                e.printStackTrace();
+                return ResponseVO.buildFailure("失败");
+            }
+//            return ResponseVO.buildSuccess(movieList2MovieVOList(movieMapper.selectAllMovie()));
         }
         return ResponseVO.buildSuccess(movieList2MovieVOList(movieMapper.selectMovieByKeyword(keyword)));
     }

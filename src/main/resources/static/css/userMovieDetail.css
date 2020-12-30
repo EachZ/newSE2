@@ -3,11 +3,21 @@
 }
 
 .table-wrapper .table b {
-    color: #1caf9a;
+    color: crimson;
     font-size: 20px;
 }
 
 .table-wrapper .table td{
     height: 60px;
     vertical-align: middle;
+}
+
+.btn-my{
+    background-color:crimson;
+    color:white;
+}
+
+.btn-my:hover{
+    background-color: darkred;
+    color:white
 }

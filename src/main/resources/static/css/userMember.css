@@ -157,3 +157,13 @@
 .notice {
      margin-left: 12px;
 }
+
+.btn-my{
+    background-color:crimson;
+    color:white;
+}
+
+.btn-my:hover{
+    background-color: darkred;
+    color:white;
+}

@@ -58,7 +58,8 @@ ul {
     color:#337ab7;
 }
 .primary-bg {
-    background: #1caf9a;
+    /*background: #1caf9a;*/
+    background-color: orange;
 }
 .error-bg {
     background: #ed5565;

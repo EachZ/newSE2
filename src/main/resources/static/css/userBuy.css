@@ -1,4 +1,4 @@
-.table{
+thead{
     /*color:#36965D;*/
     color:crimson;
 }
@@ -34,4 +34,14 @@
 .card .header .title {
     font-size: 24px;
     font-weight: 500;
+}
+
+.btn-my{
+    background-color:crimson;
+    color:white;
+}
+
+.btn-my:hover{
+    background-color: darkred;
+    color:white;
 }
