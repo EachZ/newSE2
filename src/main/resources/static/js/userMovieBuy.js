@@ -99,7 +99,7 @@ function renderSchedule(schedule, seats) {
 //在选座位时，点击座位时触发以下函数
 function seatClick(id, i, j) {
     //let用来声明块级作用域的变量
-    let seat = $('#' + id);
+    var seat = $('#' + id);
     if (seat.hasClass("cinema-hall-seat-choose")) {
         //点白变绿
         seat.removeClass("cinema-hall-seat-choose");
@@ -125,14 +125,14 @@ function seatClick(id, i, j) {
     });
 
     //设置选座界面的“座位：”信息
-    let seatDetailStr = "";
+    var seatDetailStr = "";
     if (selectedSeats.length === 0) {
         seatDetailStr += "还未选择座位"
         //确认下单的按钮禁用
         $('#order-confirm-btn').attr("disabled", "disabled")
     } else {
         //for……of 返回的是值，for……in 返回的是索引（下标）
-        for (let seatLoc of selectedSeats) {//seatLoc是一个数组，里面是座位的横纵坐标
+        for (var seatLoc in selectedSeats) {//seatLoc是一个数组，里面是座位的横纵坐标
             seatDetailStr += "<span>" + (seatLoc[0] + 1) + "排" + (seatLoc[1] + 1) + "座</span>";
         }
         //解除按钮禁用
@@ -179,7 +179,7 @@ function orderConfirmClick() {
 
             console.log("======================================uuuuuuuuuuuuuuuuuuuu");
             console.log(orderInfo);
-            for (let ticketInfo of orderInfo.ticketVOList) {
+            for (var ticketInfo in orderInfo.ticketVOList) {
                 TicketID[TicketID.length]=ticketInfo.id;
             }
             renderOrder(orderInfo);
@@ -245,7 +245,7 @@ function switchPay(type) {
 function renderOrder(orderInfo) {
     //修改“确认订单，支付”界面的表格中“票数/座位”一栏中的内容
     var ticketStr = "<div>" + selectedSeats.length + "张</div>";
-    for (let ticketInfo of orderInfo.ticketVOList) {
+    for (var ticketInfo in orderInfo.ticketVOList) {
         ticketStr += "<div>" + (ticketInfo.rowIndex + 1) + "排" + (ticketInfo.columnIndex + 1) + "座</div>";
         //order.ticketId是一个数组
         //push：向数组的末尾增加新元素
@@ -269,7 +269,7 @@ function renderOrder(orderInfo) {
         coupons = orderInfo.coupons;
         //coupon是CouponForm类型的
         console.log(coupons);
-        for (let coupon of coupons) {
+        for (var coupon in coupons) {
             //增加选项
             couponTicketStr += "<option>满" + coupon.targetAmount + "减" + coupon.discountAmount + "</option>"
         }

@@ -33,7 +33,7 @@
     </select>
 
     <update id="updateSpecialCoupon">
-        update coupon set discount_amount = #{discount} where name = "liuqin"
+        update coupon set discount_amount = #{discount} where name = "无门槛优惠券"
     </update>
 
     <select id="selectCouponByUserAndAmount" resultMap="Coupon">
@@ -50,7 +50,7 @@
     </select>
 
     <select id="selectSpecialCoupon" resultMap="Coupon">
-        select * from coupon where name = "liuqin"
+        select * from coupon where name = "无门槛优惠券"
     </select>
 
 
