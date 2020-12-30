@@ -1,11 +1,12 @@
 $(document).ready(function () {
+    // alertWin("test test test");
     getVIP();
     getCoupon();
 });
 function alertWin(message) {
     console.log(message);
-    var meStr="<h3><span class='label label-danger' style='color:white;position:absolute;z-index:10; top: 80px;'" +
-        ">"+message+"</span></h3>>"
+    var meStr="<h3><span class='label label-danger' style='margin-left:600px;color:white;position:absolute;z-index:99999; top: 80px;'" +
+        ">"+message+"</span></h3>"
     $('#alertWindow').html(meStr);
     $("#alertWindow").show().delay(1500).hide(50);
     // $("#alertWindow").show();

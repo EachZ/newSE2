@@ -22,15 +22,9 @@ var couponIndexNow=0;
 $(document).ready(function () {
     //获得排片id
     scheduleId = parseInt(window.location.href.split('?')[1].split('&')[1].split('=')[1]);
-    function alertWin(message) {
-        console.log(message);
-        var meStr="<h3><span class='label label-danger' style='color:white;position:absolute;z-index:10; top: 80px;'" +
-            ">"+message+"</span></h3>>"
-        $('#alertWindow').html(meStr);
-        $("#alertWindow").show().delay(1500).hide(50);
-        // $("#alertWindow").show();
-    }
+
     getInfo();
+
 
     function getInfo() {
         //向服务器请求数据
@@ -47,6 +41,16 @@ $(document).ready(function () {
         );
     }
 });
+
+function alertWin(message) {
+    console.log(message);
+    var meStr="<h3><span class='label label-danger' style='margin-left:600px;color:white;position:absolute;z-index:9999; top: 80px;'" +
+        ">"+message+"</span></h3>"
+    console.log(meStr);
+    $('#alertWindow').html(meStr);
+    $("#alertWindow").show().delay(1500).hide(50);
+    // $("#alertWindow").show();
+}
 
 function renderSchedule(schedule, seats) {
     //设置选座界面中右侧的信息和支付界面的表中的信息
@@ -328,7 +332,7 @@ function payConfirmClick() {
                         postPayRequest();
                     },
                     function (error) {
-                        alertWin(error);
+                        alert(error);
                     }
                 );
             } else {

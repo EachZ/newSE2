@@ -13,7 +13,7 @@ function postRequest(url, data, onSuccess, onError) {
     $.ajax({
         type: 'POST',
         url: url,
-        async: true,
+        async: false,
         data: JSON.stringify(data),
         contentType: 'application/json',
         processData: false,
