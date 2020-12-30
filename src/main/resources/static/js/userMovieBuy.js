@@ -132,7 +132,7 @@ function seatClick(id, i, j) {
         $('#order-confirm-btn').attr("disabled", "disabled")
     } else {
         //for……of 返回的是值，for……in 返回的是索引（下标）
-        for (var seatLoc in selectedSeats) {//seatLoc是一个数组，里面是座位的横纵坐标
+        for (let seatLoc of selectedSeats) {//seatLoc是一个数组，里面是座位的横纵坐标
             seatDetailStr += "<span>" + (seatLoc[0] + 1) + "排" + (seatLoc[1] + 1) + "座</span>";
         }
         //解除按钮禁用
@@ -179,7 +179,7 @@ function orderConfirmClick() {
 
             console.log("======================================uuuuuuuuuuuuuuuuuuuu");
             console.log(orderInfo);
-            for (var ticketInfo in orderInfo.ticketVOList) {
+            for (let ticketInfo of orderInfo.ticketVOList) {
                 TicketID[TicketID.length]=ticketInfo.id;
             }
             renderOrder(orderInfo);
@@ -245,7 +245,7 @@ function switchPay(type) {
 function renderOrder(orderInfo) {
     //修改“确认订单，支付”界面的表格中“票数/座位”一栏中的内容
     var ticketStr = "<div>" + selectedSeats.length + "张</div>";
-    for (var ticketInfo in orderInfo.ticketVOList) {
+    for (let ticketInfo of orderInfo.ticketVOList) {
         ticketStr += "<div>" + (ticketInfo.rowIndex + 1) + "排" + (ticketInfo.columnIndex + 1) + "座</div>";
         //order.ticketId是一个数组
         //push：向数组的末尾增加新元素
@@ -269,7 +269,7 @@ function renderOrder(orderInfo) {
         coupons = orderInfo.coupons;
         //coupon是CouponForm类型的
         console.log(coupons);
-        for (var coupon in coupons) {
+        for (let coupon of coupons) {
             //增加选项
             couponTicketStr += "<option>满" + coupon.targetAmount + "减" + coupon.discountAmount + "</option>"
         }

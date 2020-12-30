@@ -5,7 +5,7 @@ $(document).ready(function () {
     function alertWin(message) {
         console.log(message);
         var meStr="<h3><span class='label label-danger' style='color:white;position:absolute;z-index:10; top: 80px;'" +
-            ">"+message+"</span></h3>>"
+            ">"+message+"</span></h3>"
         $('#alertWindow').html(meStr);
         $("#alertWindow").show().delay(1500).hide(50);
         // $("#alertWindow").show();
