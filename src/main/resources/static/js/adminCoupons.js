@@ -78,6 +78,7 @@ $(document).ready(function() {
         // $("#send-set-input").hide();
         // $("#send-confirm-btn").hide();
 
+        console.log(dayNum)
         //以下为与后端交互真方法
         getRequest(
             '/coupon/change?discount='+dayNum,
